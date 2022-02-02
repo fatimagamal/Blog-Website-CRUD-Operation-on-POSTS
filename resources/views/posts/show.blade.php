@@ -15,8 +15,8 @@
   </div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Title :<p class="card-text">special title </p></li> 
-    <li class="list-group-item">Description : <p class="card-text">Some quick example text </p></li>    
+    <li class="list-group-item">Title :<p class="card-text">{{$PostInfo->title}}</p></li> 
+    <li class="list-group-item">Description : <p class="card-text">{{$PostInfo->description}}</p></li>    
 
   </ul>
 </div>
@@ -30,9 +30,9 @@
   </div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Name :<p class="card-text">special title </p></li> 
-    <li class="list-group-item">Email : <p class="card-text">Some quick example text </p></li>    
-    <li class="list-group-item">Craeted At :<p class="card-text">special title </p></li> 
+    <li class="list-group-item">Name :<p class="card-text"> {{$PostInfo->user->name}}</p></li> 
+    <li class="list-group-item">Email : <p class="card-text">{{$PostInfo->user->email}} </p></li>    
+    <li class="list-group-item">Created At :<p class="card-text">{{Carbon\Carbon::parse($PostInfo->created_at)->format('l jS \\of F Y h:i:s A')}}</p></li> 
 
   </ul>
 </div>
