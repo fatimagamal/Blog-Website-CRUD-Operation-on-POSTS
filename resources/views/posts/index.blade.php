@@ -14,6 +14,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
+                <th scope="col">Slug</th>
                 <th scope="col">Posted By</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Actions</th>
@@ -26,6 +27,7 @@
               <tr>
                 <th scope="col">{{$Post->id}}</th>
                 <td scope="col">{{$Post->title}}</td>
+                <td scope="col">{{$Post->Slug}}</td>
                 <td scope="col">{{isset($Post->user)?$Post->user->name:'Not Found'}}</td>
                 <td scope="col">{{Carbon\Carbon::parse($Post->created_at)->format('Y-m-d')}}</td>    
                 <td class="d-flex ">      
