@@ -6,18 +6,22 @@ use Illuminate\Http\Request;
   use App\Models\Post;
   use App\Models\User;
   use App\Http\Requests\StorePostRequest;
+  
 
 class PostController extends Controller
 {
    public function index() {
        
-    $Posts = Post::simplePaginate(4);
+    // $Posts = Post::simplePaginate(4);
+      $Posts = Post::with('user')->paginate(5);
+
     // $Posts=Post::all();
-    // $allPosts=Post::where('title','first post')->get();
+    // $Posts=Post::where('title','first post')->get();
 
        //return view('posts/index',[ or
         return view('posts.index',[
             'Posts' => $Posts,
+           
         ]);
     }
 
